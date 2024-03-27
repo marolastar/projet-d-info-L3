@@ -23,28 +23,32 @@ Fonction court_chemin1(depart, fin, carte, nom_graph) :
    - L'utilisateur tape le point de départ et d'arrivée, le nom de la carte et aussi le nom qu'il souhaite pour le graphique.
    - On construit la matrice de la carte grace a la fontion lire_fichier1
    - On initialise toutes les variables nécessaires à l'algorithme (
-        distance =
-        file de priorité =
-        sens =
-        taille =
-     
-        Elle explore les voisins du point de départ en mettant à jour les distances et en choisissant les chemins les plus courts.
-        Elle reconstruit le chemin à partir des distances calculées.
-        Elle renvoie le chemin trouvé ainsi que la distance totale du chemin.
+        distance =  matrice d'entier qui contient les distances evolutives des différents points 
+        file de priorité = la file avec les prochains points a traiter
+        sens = tableau pour se deplacer de voisins en voisins
+        taille = la taille de la matrice de la carte
+   - On explore au fur a mesure les voisins du point de depart en s'assurant de la mise a jour des distances et on recupere les points ayant les plus courtes    distances
+  - On reconstruit le chemin a partir des distances calculées et on renvoie le chemin trouvé et la distance totale du chemin.
 
-    
+  
 Fonction tracer_graphe_chemin1(graph, chemin, nom_graph) :
-        Cette fonction trace le graphique représentant la carte ainsi que le chemin trouvé.
-        Elle utilise la bibliothèque Plots pour créer un graphique à partir de la matrice représentant la carte.
-        Elle trace le chemin sur le graphique en reliant les points consécutifs du chemin avec des lignes rouges.
-        Elle marque le point de départ en vert et le point d'arrivée en bleu.
-        Elle enregistre le graphique dans un fichier avec le nom spécifié.
+
+  - Cette fonction utilise la bibliotheque Plots pour tracer le graphique représentant la carte ainsi et le chemin trouvé.
+  - On trace le chemin en reliant progressivement les points par des segments
+  - Le chemin est en rouge, le point de depart en vert et le point d'arrivée en bleu
+  - On enregistre le graphique concu dans un fichier avec le nom donnen paramètre de la fonction
+    
 
    
 Fonction tracer_court_chemin1(depart, fin, carte, nom_graph) :
-        Cette fonction est une fonction utilitaire qui appelle les autres fonctions pour trouver le plus court chemin et tracer le graphique.
-        Elle appelle d'abord court_chemin1 pour trouver le chemin et la distance.
-        Si un chemin est trouvé, elle appelle ensuite tracer_graphe_chemin1 pour tracer le graphique.
-        Elle affiche également la distance et le chemin trouvés.
+        
+   - Cette fonction relie toutes les autres fonctions pour trouver le plus court chemin et tracer le graphique.
+   - Elle appelle d'abord court_chemin1 pour trouver le chemin et la distance.
+   - Si un chemin est trouvé, elle appelle ensuite tracer_graphe_chemin1 pour tracer le graphiphe et affiche également la distance et le chemin trouvé.
 
-En résumé, ce programme prend une carte représentée par une matrice, trouve le plus court chemin entre deux points à l'aide de l'algorithme de Dijkstra, et trace ce chemin sur un graphique.
+
+ALGORITHME A*
+
+Tout comme Dijkstra, l'algorithme A* sert a trouver le plus court chemin entre 2 points sur une carte donné par l'utilisateur. IL est similaire a l'algoritme  de Dijkstra expliqué en dessus. La difference se situe au niveau du calcul de la distance des points parcouru. On rajoute une heuristique pour estimer le coût restant jusqu'àu point final. Ainsi, l'algorithme A* explore d'abord les nœuds qui semblent les plus prometteurs en termes de coût total estimé, ce qui lui permet de trouver plus efficacement le chemin optimal vers la destination.
+
+
