@@ -1,4 +1,3 @@
-using LinearAlgebra
 using Plots
 
 #Fonction pour lire un fichier
