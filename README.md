@@ -10,10 +10,10 @@ Fonction lire_fichier1(nom::String) :
         
   - Cette fonction lit un fichier représentant une carte où chaque caractère représente un type de terrain (par exemple, '@' pour un obstacle,  'W' pour l'eau, '.'    pour un terrain libre etc).
   - Chaque caractère du fichier est remplacé par une valeur numérique correspondant au type de terrain.
-        @ = 0
-        S = 5
-        W = 8 
-        T ou . = 1
+       -  @ = 0
+       -  S = 5
+       - W  = 8 
+       - T ou . = 1
   - La taille de la matrice  est celle de la carte.
 
    
