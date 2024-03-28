@@ -45,10 +45,26 @@ Fonction tracer_court_chemin1(depart, fin, carte, nom_graph) :
    - Cette fonction relie toutes les autres fonctions pour trouver le plus court chemin et tracer le graphique.
    - Elle appelle d'abord court_chemin1 pour trouver le chemin et la distance.
    - Si un chemin est trouvé, elle appelle ensuite tracer_graphe_chemin1 pour tracer le graphiphe et affiche également la distance et le chemin trouvé.
-
+     
 
 ALGORITHME A*
 
 Tout comme Dijkstra, l'algorithme A* sert a trouver le plus court chemin entre 2 points sur une carte donné par l'utilisateur. IL est similaire a l'algoritme  de Dijkstra expliqué en dessus. La difference se situe au niveau du calcul de la distance des points parcouru. On rajoute une heuristique pour estimer le coût restant jusqu'àu point final. Ainsi, l'algorithme A* explore d'abord les nœuds qui semblent les plus prometteurs en termes de coût total estimé, ce qui lui permet de trouver plus efficacement le chemin optimal vers la destination.
+function tracer_court_chemin2(depart, fin, carte, nom_graph)
+  - depart : point de depart
+  - fin: point d'arrivée
+  - carte: nom du fichier contenant la carte (chaine de caractere) 
+  - nom_graph: nom avec lequel on souhaite representer notre graphique (chaine de caractère)
 
+    
+ALGORITHME WA*
+
+ WA* est une variante de l'algorithme de A*. Il essaye d’améliorer l'algorithme de A* en peaufinant le calcul de l’heuristique. En effet, on ajoute un coefficient au calcul de la distance restante entre un point et le point final au niveau dela mise a jours des distances. 
+function tps_exec(depart, fin, carte, nom_graph,w)
+  - depart : point de depart
+  - fin: point d'arrivée
+  - carte: nom du fichier contenant la carte (chaine de caractere) 
+  - nom_graph: nom avec lequel on souhaite representer notre graphique (chaine de caractère)
+  - w: coefficient de l'heuristique (Apres analyse il est bien de tester la fonction avec w=2)
+ 
 
